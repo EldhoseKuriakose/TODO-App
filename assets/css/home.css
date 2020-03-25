@@ -1,0 +1,169 @@
+/* Body */
+
+body{
+    background-color: rgb(29, 52, 75);
+    font-family: sans-serif;
+}
+
+
+/* App Container */
+#todo-app-container{
+    width: 50%;
+    margin: 0 auto;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#todo-app-container h1{
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    color: slategray;
+}
+
+#task-form p{
+    margin-bottom: 0;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: Candara;
+}
+
+#task-form #description{
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 5px;
+    width: 80%;
+    height: 3rem;
+    border: none;
+    outline: none;
+}
+
+#category-date-container{
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+}
+
+#category-container{
+    width: 50%;
+    height: 100%;
+}
+
+#category-container #category{
+    border: none;
+    outline: none;
+    margin-left: 25px;
+    height: 2rem;
+    background-color: transparent;
+    width: 90%;
+}
+
+#category-container #category:hover{
+    cursor: pointer;
+}
+
+#date-container{
+    width: 50%;
+    margin-left: 40px;
+}
+
+#date-container input{
+    margin-top: 5px;
+    margin-left: 32px;
+    border: none;
+    outline: none;
+    width: 80%;
+}
+
+#date-container input:hover{
+    cursor: pointer;
+}
+
+#button-container{
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* Add task button */
+#button-container #add-button{
+    height: 3rem;
+    width: 15rem;
+    color: white;
+    padding: 0;
+    border: none;
+    background-color: black;
+    border-radius: 3px;
+}
+
+#button-container #add-button:hover{
+    opacity: 80%;
+    cursor: pointer;
+    box-shadow: 0px 0px 30px 2px grey;
+}
+
+#button-container #add-button i{
+    margin-right: 20px;
+}
+
+
+/* Task List */
+#tasks-list-container ul{
+    list-style: none;
+}
+
+.date-and-description{
+    display: inline-block;
+    margin-left: 10px;
+    width: 67%;
+}
+
+.date-and-description .description-para{
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.date-and-description i{
+    color: slategray;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.date-and-description .date-para{
+    display: inline-block;
+}
+
+.category-para-container{
+    display: inline-block;
+    width: 7rem;
+    height: 2.5rem;
+    padding-top: 0.5px;
+    padding-bottom: 2px;
+    background-color: slateblue;
+    border-radius: 2px;
+}
+
+.category-para-container .category-para{
+    font-family: sans-serif;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+/* Delete button */
+.details .delete-button{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.details .delete-button a{
+    color: red;
+    font-size: 20px;
+}
+
+.details .delete-button a:hover{
+    background-color: lightgray;
+    box-shadow: 0px 0px 30px 2px grey;
+}

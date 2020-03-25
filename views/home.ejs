@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>
+            <%= title %> 
+        </title>
+        <script src="https://kit.fontawesome.com/e68c8ff3bc.js" crossorigin="anonymous"></script>
+        <link rel="icon" type="image/ico" href="/images/logo.png">
+        <link rel="stylesheet" href="/css/home.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <!-- jquery calendar -->
+        <script>
+            $( function() {
+                $( "#date" ).datepicker({
+                    dateFormat: 'DD, d MM, yy',
+                    changeMonth: true,
+                    changeYear: true
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <!-- App Container -->
+        <div id="todo-app-container">
+            <h1>TODO APP</h1>
+            <form id="task-form" action="/create-task" method="POST" autocomplete="off">
+                <!-- Description of task -->
+                <p>DESCRIPTION</p>
+                <input id="description" type="text" name="description" placeholder="Your Task">
+                
+                <!-- category and due date of task -->
+                <div id="category-date-container">
+                    <div id="category-container">
+                        <p>CATEGORY</p>
+                        <select name="category" id="category">
+                            <option id="choose" value="">Choose a category</option>
+                            <option value="personal">Personal</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="work">Work</option>
+                            <option value="school">School</option>
+                            <option value="cleaning">Cleaning</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+    
+                    <div id="date-container">
+                        <p>DUE DATE</p>
+                        <input type="text" id="date" name="date" placeholder="dd/mm/yyyy">
+                    </div>
+                </div>
+                
+                <!-- Add button -->
+                <div id="button-container">
+                    <button type="submit" id="add-button"><i class="fas fa-plus"></i>ADD TASK</button>       
+                </div>
+            </form>
+
+            <!-- List of tasks added -->
+            <div id="tasks-list-container">
+                <ul>
+                    <% for (let i of task_list){ %>
+                        <li class="list-of-tasks">
+                            <div class="details">
+                                <div class="date-and-description">
+                                    <p class="description-para"><%= i.description %></p>
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <p class="date-para"><%= i.date %></p>
+                                </div>
+                                <div class="category-para-container">
+                                    <p class="category-para"><%= i.category %></p>
+                                </div>
+                                <!-- Delete button -->
+                                <div class="delete-button">
+                                    <a href="/delete-task/?id=<%= i.id %>&
+                                        name=<%= i.name %>">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>  
+    </body>
+
+</html>
